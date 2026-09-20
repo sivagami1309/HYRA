@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+import time
 import logging
 from datetime import datetime, timedelta
 from typing import Literal
@@ -8,6 +8,12 @@ import httpx
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+# ============================================================
+# OPEN-METEO CACHE
+# ============================================================
+
+WEATHER_CACHE = {}
+WEATHER_CACHE_SECONDS = 600  # 10 minutes
 
 
 # ============================================================
@@ -133,6 +139,17 @@ async def get_weather_data(
     latitude: float,
     longitude: float
 ):
+
+    # Create a unique cache key for the location
+    cache_key = f"{round(latitude, 4)},{round(longitude, 4)}"
+
+    # Return cached weather data if it is still fresh
+    if cache_key in WEATHER_CACHE:
+        cached_time, cached_data = WEATHER_CACHE[cache_key]
+
+        if time.time() - cached_time < WEATHER_CACHE_SECONDS:
+            print(f"Using cached weather data for {cache_key}")
+            return cached_data
 
     url = "https://api.open-meteo.com/v1/forecast"
 
