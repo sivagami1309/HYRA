@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://hyra-54up.onrender.com";
 
 document.addEventListener("DOMContentLoaded", () => {
 
