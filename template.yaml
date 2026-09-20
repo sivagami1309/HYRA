@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: python3.12
+
+Resources:
+  PredictFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: backend/
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.12
+      MemorySize: 256
+      Timeout: 30
+      Events:
+        PredictApi:
+          Type: HttpApi
+          Properties:
+            Path: /predict
+            Method: post
+
+Outputs:
+  PredictApiUrl:
+    Description: Local SAM API URL
+    Value: http://127.0.0.1:3000/predict

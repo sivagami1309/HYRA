@@ -1,0 +1,31 @@
+{
+  "body": "{\"location\":\"Kodaikanal\",\"rainfall\":145,\"soil_moisture\":82,\"temperature\":24,\"terrain\":\"high\"}",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "httpMethod": "POST",
+  "isBase64Encoded": false,
+  "path": "/predict",
+  "pathParameters": null,
+  "queryStringParameters": null,
+  "requestContext": {
+    "accountId": "123456789012",
+    "apiId": "local",
+    "domainName": "127.0.0.1",
+    "domainPrefix": "local",
+    "http": {
+      "method": "POST",
+      "path": "/predict",
+      "protocol": "HTTP/1.1",
+      "sourceIp": "127.0.0.1",
+      "userAgent": "sam-local"
+    },
+    "requestId": "local-request-id",
+    "routeKey": "POST /predict",
+    "stage": "$default",
+    "time": "01/Jan/2026:00:00:00 +0000",
+    "timeEpoch": 1767225600000
+  },
+  "resource": "/predict",
+  "stageVariables": null
+}

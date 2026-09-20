@@ -1,0 +1,45 @@
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# AWS SAM generated files
+.aws-sam/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# API keys and credentials
+*.pem
+*.key
+credentials
+credentials.json
+
+# IDE files
+.vscode/*
+!.vscode/settings.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python coverage
+.coverage
+htmlcov/
+
+# Node dependencies if used
+node_modules/
+
+# Build files
+dist/
+build/

@@ -1,0 +1,8 @@
+{
+  "venvPath": "C:\\Users\\SIVAGAMI S\\hyra\\HYRA-Hackathon\\backend",
+  "venv": "venv",
+  "include": [
+    "backend"
+  ],
+  "typeCheckingMode": "basic"
+}
